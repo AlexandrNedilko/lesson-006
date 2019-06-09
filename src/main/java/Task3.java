@@ -15,4 +15,15 @@ public class Main {
 
     Print the cause of the exception to the console."*/
 public class Task3 {
+    public static void main(String[] args) {
+        int a = args.length;
+        System.out.println(a);
+
+        int b = 10 / a;
+        int[] c = {1};
+        System.out.println(c[1]);
+
+    }
+
+
 }

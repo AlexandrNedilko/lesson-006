@@ -12,4 +12,19 @@ public class Main {
     }
 }"*/
 public class Task2 {
+    public static void main(String[] args) {
+        System.out.println(divideByZero());
+    }
+
+    public static int divideByZero() {
+        try {
+            int a = 5;
+            int b = 0;
+            return a / b;
+
+        } catch (ArithmeticException e) {
+            System.out.println("Warning: ArithmeticException");
+        }
+        return 0;
+    }
 }
