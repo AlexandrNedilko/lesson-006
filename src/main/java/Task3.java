@@ -17,13 +17,20 @@ public class Main {
 public class Task3 {
     public static void main(String[] args) {
         int a = args.length;
-        System.out.println(a);
-
-        int b = 10 / a;
+        System.out.println("a[] length " + a);
         int[] c = {1};
-        System.out.println(c[1]);
+        try {
+            int b = 10 / a;
 
+        } catch (ArithmeticException  e) {
+            System.out.println("Warning: ArithmeticException");
+        }
+
+        try {
+            System.out.println(c[1]);
+        } catch (ArrayIndexOutOfBoundsException OutOfBoundsException) {
+            System.out.println("Warning: ArrayIndexOutOfBoundsException");
+
+        }
     }
-
-
 }

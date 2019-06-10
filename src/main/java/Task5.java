@@ -12,4 +12,16 @@ public class Main {
 
 }"*/
 public class Task5 {
+    public static void main(String[] args) {
+        try {
+            iCanThrowException();
+        } catch (NullPointerException e) {
+        System.out.println(e.toString());
+        }
+        System.out.println("End of method Main");
+    }
+
+    public static void iCanThrowException() {
+throw new NullPointerException();
+    }
 }

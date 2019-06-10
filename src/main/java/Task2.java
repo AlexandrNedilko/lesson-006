@@ -26,6 +26,6 @@ public class Task2 {
             System.out.println("Warning: ArithmeticException");
             System.out.println("Cannot divide by zero...");
         }
-        return 0;
+       return 0;
     }
 }

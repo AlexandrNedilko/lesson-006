@@ -18,9 +18,10 @@ public class Task4 {
             int b = 4 / a;
         } catch (ArithmeticException e) {
             e.printStackTrace();
+            System.out.println(e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
-
         }
+
     }
 }
