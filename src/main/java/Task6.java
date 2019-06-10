@@ -4,26 +4,38 @@
         If the user entered some text, instead of entering a number, the method should catch the exception and display all previously entered numbers as a result.
         Numbers output from a new line preserving the order of input."*/
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Iterator;
+
+import java.util.Scanner;
 
 public class Task6 {
-    public static void main(String[] args) {
-        //public static void readData () {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            ArrayList<Integer> list = new ArrayList<Integer>();
-            boolean bool = true;
-            while (bool)
-                try {
-                    int i = Integer.parseInt(reader.readLine());
-                    list.add(i);
-                } catch (Exception e) {
-                    Iterator iterator = list.iterator();
-                    while (iterator.hasNext())
-                        System.out.println(iterator.next());
-                    bool = false;
+
+        private static final int FROM = 1;
+        private static final int TO = 5;
+
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Введите число от 1 до 5: ");
+            while (true) {
+                String line = sc.nextLine();
+                if (isNumber(line)) {
+                    int value = Integer.valueOf(line);
+                    if (isInRange(value, FROM, TO)) {
+                        System.out.println("Правильный ввод. Делаем что-то очень важное.");
+                        break;
+                    } else {
+                        System.out.printf("Я же просил ввести число от %d до %d. Еще раз...%n", FROM, TO);
+                    }
+                } else {
+                    System.out.println("Я же просил ввести число. Еще раз...");
                 }
+            }
+        }
+
+        private static boolean isInRange(int value, int from, int to) {
+            return value >= from && value <= to;
+        }
+
+        private static boolean isNumber(String str) {
+            return str.matches("-?\\d+");
         }
     }
