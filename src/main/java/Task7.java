@@ -35,7 +35,7 @@ public class Task7 {
 
 
 
-        return ;
+        return this.first==obj.first&this.last==obj.last;
     }
 
     @Override
