@@ -1,9 +1,14 @@
-/*"7. In the Solution class, correct a couple of equals / hashCode methods in accordance with the rules for implementing these methods (check details with your favorite search engine).
+import java.util.HashSet;
+import java.util.Set;
+
+/*
+"7. In the Solution class, correct a couple of equals / hashCode methods in accordance with the rules for implementing these methods (check details with your favorite search engine).
         Both the first and last strings should participate in the comparison using the equals method and the hashcode calculation.
-public class Example {
+*/
+public class Task7 {
     private final String first, last;
 
-    public Example(String first, String last) {
+    public Task7(String first, String last) {
         this.first = first;
         this.last = last;
     }
@@ -19,17 +24,20 @@ public class Example {
     }
 
     public static void main(String[] args) {
-        Set<Example> s = new HashSet<>();
-        s.add(new Example(""Donald"", ""Duck""));
-        System.out.println(s.contains(new Example(""Donald"", ""Duck"")));
+        Set<Task7> s = new HashSet<>();
+        s.add(new Task7("Donald", "Duck"));
+        System.out.println(s.contains(new Task7("Donald", "Duck")));
     }
 }
+
+/*
 "
         "1) The result should be true;
-        2) Do not change the main method;"*/
+        2) Do not change the main method;"
+*/
 
 
-  import java.util.HashSet;
+ /* import java.util.HashSet;
   import java.util.Set;
 
 public class Task7 {
@@ -40,18 +48,18 @@ public class Task7 {
         this.last = last;
     }
 
-   /* public boolean equals(Task7 n)
+   *//* public boolean equals(Task7 n)
     {
         if (n.first == null) return false;
         if (n.last == null) return false;
         if (n == null) return false;
         if (n.getClass() != this.getClass()) return false;
         return n.first.equals(first) && n.last.equals(last);
-    }*/
+    }*//*
 
-    /*public int hashCode() {
+    *//*public int hashCode() {
         return 31 * first.hashCode() + last.hashCode();
-    }*/
+    }*//*
 
     @Override
     public boolean equals(Object o)
@@ -80,4 +88,4 @@ public class Task7 {
         s.add(new Task7("Donald", "Duck"));
         System.out.println(s.contains(new Task7("Donald", "Duck")));
     }
-}
+}*/

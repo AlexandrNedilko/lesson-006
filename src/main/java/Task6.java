@@ -5,37 +5,40 @@
         Numbers output from a new line preserving the order of input."*/
 
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Task6 {
+    public static void main(String[] args) {
+        List <Integer> list = new LinkedList <Integer> ();
+         readData(list);
 
-        private static final int FROM = 1;
-        private static final int TO = 5;
-
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Введите число от 1 до 5: ");
-            while (true) {
-                String line = sc.nextLine();
-                if (isNumber(line)) {
-                    int value = Integer.valueOf(line);
-                    if (isInRange(value, FROM, TO)) {
-                        System.out.println("Правильный ввод. Делаем что-то очень важное.");
-                        break;
-                    } else {
-                        System.out.printf("Я же просил ввести число от %d до %d. Еще раз...%n", FROM, TO);
-                    }
-                } else {
-                    System.out.println("Я же просил ввести число. Еще раз...");
-                }
-            }
-        }
-
-        private static boolean isInRange(int value, int from, int to) {
-            return value >= from && value <= to;
-        }
-
-        private static boolean isNumber(String str) {
-            return str.matches("-?\\d+");
+        for (int b:list) {
+            System.out.print(b);
+            System.out.print(" ");
         }
     }
+
+    private static void readData(List list) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            int tmp= 0;
+            boolean b = true;
+
+            System.out.println("Введите число  : ");
+            while (b) {
+                    tmp++;
+                    String line = sc.nextLine();
+                    int value = Integer.valueOf(line);
+                    list.add(value);
+                    System.out.println("  Еще раз...");
+                    if(tmp==5) b=false;
+                }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }finally {  //Закрыть Scanner!!!
+            sc.close();
+        }
+    }
+}
